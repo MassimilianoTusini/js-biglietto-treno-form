@@ -1,10 +1,3 @@
-
-// MILESTONE 3:
-// Ora che la logica è funzionante in pagina, possiamo andare a dedicarci allo stile, raffinando la parte di HTML e CSS in modo da renderla esteticamente gradevole.
-
-// Nota:
-// Se non vi sentite particolarmente creativi, questa (allegato) potrebbe essere un’implementazione da seguire per il terzo milestone. Potete scegliere di implementare una soluzione completamente diversa oppure simile, ma in ogni caso cercate di farla vostra. 🎨 
-
 // Dichiarazione degli input
 const button = document.getElementById ("genera");
 const secondButton = document.getElementById ("annulla")
