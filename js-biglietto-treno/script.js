@@ -33,7 +33,7 @@ myForm.addEventListener("submit", (event) => {event.preventDefault();
     // Output dei valori
     outName.textContent = "Nome e Cognome del passeggero:" + " " + userName.value;
     outAge.textContent = "Età del passeggero:" + " " + userAge;
-    outKm.textContentL = "Distanza da percorrere:" + " " + userKm + " Km";
+    outKm.textContent = "Distanza da percorrere:" + " " + userKm + " Km";
     if (userAge < 18){
         prezzo.textContent =`Il prezzo del biglietto è: ${prezzoFinale}€ (applicato sconto del 20%) `;
     } else if (userAge > 65){
