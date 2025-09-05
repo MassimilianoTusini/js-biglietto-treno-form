@@ -21,7 +21,8 @@
 // Se non vi sentite particolarmente creativi, questa (allegato) potrebbe essere un’implementazione da seguire per il terzo milestone. Potete scegliere di implementare una soluzione completamente diversa oppure simile, ma in ogni caso cercate di farla vostra. 🎨 
 
 // Dichiarazione degli input
-const button = document.querySelector (".genera");
+const button = document.getElementById ("genera");
+const secondButton = document.getElementById ("annulla")
 const myForm = document.getElementById ("form-ticket");
 const userName = document.getElementById ("name");
 // Dichiarazione output
@@ -32,6 +33,7 @@ const prezzo = document.querySelector (".result");
 
 // Blocco il refresh della pagina e prendo i valori degli input a click
 myForm.addEventListener("submit", (event) => {event.preventDefault();
+    
     // valori input
     const userKm = parseInt(document.getElementById ("km").value); 
     const userAge = parseInt(document.getElementById ("eta").value);
@@ -42,13 +44,17 @@ myForm.addEventListener("submit", (event) => {event.preventDefault();
     }
     // Richiamo la funzione del prezzo scontato
     let prezzoFinale = finalPrice(userKm, userAge);
-
+    
     // Output dei valori
     outName.innerHTML = "Nome e Cognome del passeggero" + " " + userName.value;
     outAge.innerHTML = "Età del passeggero" + " " + userAge;
     outKm.innerHTML = "Distanza da percorrere" + " " + userKm;
     prezzo.innerHTML = prezzoFinale + "€";
 
+    // Pulsante per il reset
+    secondButton.addEventListener("click", () => {
+    myForm.reset()});
+    
     // Console log dei valori finiti
     console.log("KM inseriti", userKm);
     console.log("Età inserita", userAge);
