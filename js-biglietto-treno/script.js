@@ -21,9 +21,37 @@
 // Se non vi sentite particolarmente creativi, questa (allegato) potrebbe essere un’implementazione da seguire per il terzo milestone. Potete scegliere di implementare una soluzione completamente diversa oppure simile, ma in ogni caso cercate di farla vostra. 🎨 
 
 // Dichiarazione degli input
-const userName = document.getElementById ("name");
-const UserAge = document.getElementById ("eta");
 const button = document.querySelector (".genera");
-const myForm = document.getElementById ("form-ticket")
+const myForm = document.getElementById ("form-ticket");
+
+// Blocco il refresh della pagina e prendo i valori degli input a click
+myForm.addEventListener("submit", (event) => {event.preventDefault();
+    // valori input
+    const userKm = parseInt(document.getElementById ("km").value); 
+    const userAge = parseInt(document.getElementById ("eta").value);
+    // Controllo sia un numero
+    if (isNaN(userKm) || isNaN(userAge)){
+        alert("Inserisci dei valori numerici");
+        return;
+    }
+    // Richiamo la funzione del prezzo scontato
+    let prezzoFinale = finalPrice(userKm, userAge);
+
+    // Console log dei valori finiti
+    console.log("KM inseriti", userKm);
+    console.log("Età inserita", userAge);
+    console.log ("Prezzo finale", prezzoFinale.toFixed(2));
+})
 
 // Funzione prezzo del biglietto
+function finalPrice(km, eta){
+    // Prezzo normale del biglietto
+    let price = (km * 0.21);
+    // Prezzi scontati
+    if (eta < 18) {
+        price *= 0.80;
+    } else if (eta > 65) {
+        price *= 0.60;
+    }
+    return price;
+}
