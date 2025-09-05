@@ -15,6 +15,8 @@ const outName = document.querySelector (".user-name");
 const outAge = document.querySelector (".user-age");
 const outKm = document.querySelector (".user-km");
 const prezzo = document.querySelector (".result");
+const wagon = document.querySelector (".wagon");
+const cpCode = document.querySelector(".cp-code");
 
 // Blocco il refresh della pagina e prendo i valori degli input a click
 myForm.addEventListener("submit", (event) => {event.preventDefault();
@@ -31,11 +33,24 @@ myForm.addEventListener("submit", (event) => {event.preventDefault();
     // Richiamo la funzione del prezzo scontato
     let prezzoFinale = finalPrice(userKm, userAge);
     
+    // Generazione numeri causali
+    const numWagon = Math.floor(Math.random() * 6) + 1;
+    const numCpCode = Math.floor(Math.random() * 99999) + 10000;
+
     // Output dei valori
-    outName.innerHTML = "Nome e Cognome del passeggero:" + " " + userName.value;
-    outAge.innerHTML = "Età del passeggero:" + " " + userAge;
-    outKm.innerHTML = "Distanza da percorrere:" + " " + userKm + " Km";
-    prezzo.innerHTML ="Il prezzo del biglietto è: " + prezzoFinale + "€";
+    outName.textContent = "Nome e Cognome del passeggero:" + " " + userName.value;
+    outAge.textContent = "Età del passeggero:" + " " + userAge;
+    outKm.textContentL = "Distanza da percorrere:" + " " + userKm + " Km";
+    if (userAge < 18){
+        prezzo.textContent =`Il prezzo del biglietto è: ${prezzoFinale}€ (applicato sconto del 20%) `;
+    } else if (userAge > 65){
+        prezzo.textContent =`Il prezzo del biglietto è: ${prezzoFinale}€ (applicato sconto del 40%)`;
+    } else {
+        prezzo.textContent =`Il prezzo del biglietto è: ${prezzoFinale}€`;
+    }
+    wagon.textContent = `Carrozza: ${numWagon}`;
+    cpCode.textContent = `Codice CP: ${numCpCode}`;
+    
 
     // Pulsante per il reset
     secondButton.addEventListener("click", () => {

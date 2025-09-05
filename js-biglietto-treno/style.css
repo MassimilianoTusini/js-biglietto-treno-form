@@ -94,7 +94,26 @@ button:hover {
 .output p {
     background: #fff;
     border: 1px solid #D63384;
-    padding: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    color: #6A0D37;
+    font-size: 15px;
+    font-weight: 500;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.second-output{
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.wagon, .cp-code{
+    background: #fff;
+    border: 1px solid #D63384;
+    padding: 10px;
+    width: 100%;
     border-radius: 10px;
     color: #6A0D37;
     font-size: 15px;
