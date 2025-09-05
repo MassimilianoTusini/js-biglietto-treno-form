@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Massimiliano Tusini">
+    <!-- Collegamento Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Prezzo Biglietto</title>
 </head>
 <body>
-    <form class="form-box" id="form-ticket">
-        <div>
+  <div class="container">
+    <form id="form-ticket">
+        <div class="form-box">
             <label for="name">Inserisci Nome e Cognome</label>
             <input type="text" id="name" placeholder="Inserisci Nome e Cognome">
             <label for="km">Distanza da percorrere</label>
@@ -22,13 +27,13 @@
             <button type="submit" id="annulla">Annulla</button>
         </div>
     </form>
-        <div>
+        <div class="output">
             <p class="user-name"></p>
             <p class="user-age"></p>
             <p class="user-km"></p>
             <p class="result"></p>
         </div>
-
+  </div>
     <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
