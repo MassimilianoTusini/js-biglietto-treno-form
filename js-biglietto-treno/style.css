@@ -70,11 +70,11 @@ button{
 }
 
 #genera{
-    background-color: rgba(137, 239, 255, 0.853);
+    background-color: #929982;
 }
 
 #annulla{
-    background-color: rgba(253, 136, 2, 0.742);
+    background-color: #EDCBB1;
 }
 
 button:hover {
