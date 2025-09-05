@@ -31,8 +31,8 @@ myForm.addEventListener("submit", (event) => {event.preventDefault();
     const numCpCode = Math.floor(Math.random() * 99999) + 10000;
 
     // Output dei valori
-    outName.textContent = `"Nome e Cognome del passeggero: ${userName.value}`;
-    outAge.textContent = `Età del passeggero: ${userAge}`;
+    outName.textContent = `Nome e Cognome del passeggero: ${userName.value}`;
+    outAge.textContent = `Età del passeggero: ${userAge} anni`;
     outKm.textContent = `Distanza da percorrere: ${userKm}Km`;
     if (userAge < 18){
         prezzo.textContent =`Il prezzo del biglietto è: ${prezzoFinale}€ (applicato sconto del 20%) `;
