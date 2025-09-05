@@ -35,7 +35,7 @@ myForm.addEventListener("submit", (event) => {event.preventDefault();
     outName.innerHTML = "Nome e Cognome del passeggero:" + " " + userName.value;
     outAge.innerHTML = "Età del passeggero:" + " " + userAge;
     outKm.innerHTML = "Distanza da percorrere:" + " " + userKm + " Km";
-    prezzo.innerHTML = prezzoFinale + "€";
+    prezzo.innerHTML ="Il prezzo del biglietto è: " + prezzoFinale + "€";
 
     // Pulsante per il reset
     secondButton.addEventListener("click", () => {
