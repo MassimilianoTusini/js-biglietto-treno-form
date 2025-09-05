@@ -23,6 +23,12 @@
 // Dichiarazione degli input
 const button = document.querySelector (".genera");
 const myForm = document.getElementById ("form-ticket");
+const userName = document.getElementById ("name");
+// Dichiarazione output
+const outName = document.querySelector (".user-name");
+const outAge = document.querySelector (".user-age");
+const outKm = document.querySelector (".user-km");
+const prezzo = document.querySelector (".result");
 
 // Blocco il refresh della pagina e prendo i valori degli input a click
 myForm.addEventListener("submit", (event) => {event.preventDefault();
@@ -37,10 +43,16 @@ myForm.addEventListener("submit", (event) => {event.preventDefault();
     // Richiamo la funzione del prezzo scontato
     let prezzoFinale = finalPrice(userKm, userAge);
 
+    // Output dei valori
+    outName.innerHTML = "Nome e Cognome del passeggero" + " " + userName.value;
+    outAge.innerHTML = "Età del passeggero" + " " + userAge;
+    outKm.innerHTML = "Distanza da percorrere" + " " + userKm;
+    prezzo.innerHTML = prezzoFinale + "€";
+
     // Console log dei valori finiti
     console.log("KM inseriti", userKm);
     console.log("Età inserita", userAge);
-    console.log ("Prezzo finale", prezzoFinale.toFixed(2));
+    console.log ("Prezzo finale", prezzoFinale.toFixed(2), "€");
 })
 
 // Funzione prezzo del biglietto
