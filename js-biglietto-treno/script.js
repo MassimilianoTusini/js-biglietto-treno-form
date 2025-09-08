@@ -39,16 +39,12 @@ myForm.addEventListener("submit", (event) => {event.preventDefault();
     } else if (userAge > 65){
         prezzo.textContent =`Il prezzo del biglietto è: ${prezzoFinale}€ (applicato sconto del 40%)`;
     } else {
-        prezzo.textContent =`Il prezzo del biglietto è: ${prezzoFinale}€`;
+        prezzo.textContent =`Il prezzo del biglietto è: ${prezzoFinale}€`;   
     }
+
     wagon.textContent = `Carrozza: ${numWagon}`;
     cpCode.textContent = `Codice CP: ${numCpCode}`;
     
-
-    // Pulsante per il reset
-    secondButton.addEventListener("click", () => {
-    myForm.reset()});
-
     // Console log dei valori finiti
     console.log("KM inseriti", userKm);
     console.log("Età inserita", userAge);
@@ -67,3 +63,7 @@ function finalPrice(km, eta){
     }
     return price.toFixed(2);
 }
+
+// Pulsante per il reset
+secondButton.addEventListener("click", () => {
+myForm.reset()});
